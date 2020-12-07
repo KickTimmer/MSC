@@ -1,0 +1,969 @@
+@prefix : <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cultivation: <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#> .
+@base <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation> .
+
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation> rdf:type owl:Ontology ;
+                                                                  rdfs:comment "Cultivation charasteristics for sustainability calculations" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#KgCo2EQperUnit
+cultivation:KgCo2EQperUnit rdf:type owl:AnnotationProperty ;
+                           rdfs:range xsd:decimal .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#alt
+<http://www.w3.org/2003/01/geo/wgs84_pos#alt> rdf:type owl:AnnotationProperty ;
+                                              rdfs:comment """The WGS84 altitude of a SpatialThing (decimal meters 
+above the local reference ellipsoid).""" ;
+                                              rdfs:label "altitude" ;
+                                              rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#lat
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> rdf:type owl:AnnotationProperty ;
+                                              rdfs:comment "The WGS84 latitude of a SpatialThing (decimal degrees)." ;
+                                              rdfs:label "latitude" ;
+                                              rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#location
+<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:AnnotationProperty ;
+                                                   rdfs:subPropertyOf <http://xmlns.com/foaf/0.1/based_near> ;
+                                                   rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#long
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> rdf:type owl:AnnotationProperty ;
+                                               rdfs:comment "The WGS84 longitude of a SpatialThing (decimal degrees)." ;
+                                               rdfs:label "longitude" ;
+                                               rdfs:domain <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+
+###  http://xmlns.com/foaf/0.1/based_near
+<http://xmlns.com/foaf/0.1/based_near> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasPhenomenon
+om:hasPhenomenon rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit
+om:hasUnit rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasValue
+om:hasValue rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#location
+<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#hasGreenhouseHeating
+cultivation:hasGreenhouseHeating rdf:type owl:DatatypeProperty ;
+                                 rdfs:domain cultivation:Greenhouse_cultivation_system ;
+                                 rdfs:range [ rdf:type rdfs:Datatype ;
+                                              owl:oneOf [ rdf:type rdf:List ;
+                                                          rdf:first "No" ;
+                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                     rdf:first "Yes" ;
+                                                                     rdf:rest rdf:nil
+                                                                   ]
+                                                        ]
+                                            ] .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#hasNumericalValue
+cultivation:hasNumericalValue rdf:type owl:DatatypeProperty ;
+                              rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/AreaFraction
+om:AreaFraction rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent
+om:ElectricCurrent rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Heat
+om:Heat rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Mass
+om:Mass rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Measure
+om:Measure rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Percentage
+om:Percentage rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Biogas_Boiler_Heat
+cultivation:Biogas_Boiler_Heat rdf:type owl:Class ;
+                               rdfs:subClassOf cultivation:Boiler_Heat ;
+                               rdfs:label "Biogas boiler heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Biogas_CHP_Electricity
+cultivation:Biogas_CHP_Electricity rdf:type owl:Class ;
+                                   rdfs:subClassOf cultivation:CHP_Electricity ;
+                                   rdfs:label "Biogas CHP electricity"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Biogas_CHP_Heat
+cultivation:Biogas_CHP_Heat rdf:type owl:Class ;
+                            rdfs:subClassOf cultivation:CHP_Heat ;
+                            rdfs:label "Biogas CHP heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Biowaste
+cultivation:Biowaste rdf:type owl:Class ;
+                     cultivation:KgCo2EQperUnit 0.15 ;
+                     rdfs:label "Biowaste"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Boiler_Heat
+cultivation:Boiler_Heat rdf:type owl:Class ;
+                        rdfs:subClassOf cultivation:Heat_Source ;
+                        rdfs:label "Boiler heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#CHP_Electricity
+cultivation:CHP_Electricity rdf:type owl:Class ;
+                            rdfs:subClassOf cultivation:Electricity_Source ;
+                            rdfs:label "CHP electricity"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#CHP_Heat
+cultivation:CHP_Heat rdf:type owl:Class ;
+                     rdfs:subClassOf cultivation:Heat_Source ;
+                     rdfs:label "CHP heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#CO2_Enrichment
+cultivation:CO2_Enrichment rdf:type owl:Class ;
+                           rdfs:label "CO2 enrichment"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Cultivation_system
+cultivation:Cultivation_system rdf:type owl:Class ;
+                               rdfs:subClassOf cultivation:Production_System ;
+                               rdfs:label "Cultivation system"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Electric_Powerplant_Heat
+cultivation:Electric_Powerplant_Heat rdf:type owl:Class ;
+                                     rdfs:subClassOf cultivation:Heat_Source ;
+                                     rdfs:label "Electric powerplant heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Electricity_Source
+cultivation:Electricity_Source rdf:type owl:Class ;
+                               rdfs:label "Electricity source"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#External_CO2_Enrichment
+cultivation:External_CO2_Enrichment rdf:type owl:Class ;
+                                    rdfs:subClassOf cultivation:CO2_Enrichment ;
+                                    rdfs:label "External CO2 enrichment"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Fertiliser
+cultivation:Fertiliser rdf:type owl:Class ;
+                       rdfs:label "Fertiliser"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Fuel_use
+cultivation:Fuel_use rdf:type owl:Class ;
+                     rdfs:label "Fuel use"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Geothermal_Heat
+cultivation:Geothermal_Heat rdf:type owl:Class ;
+                            rdfs:subClassOf cultivation:Heat_Source ;
+                            rdfs:label "Geothermal heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_Yield
+cultivation:Greenhouse_Yield rdf:type owl:Class ;
+                             rdfs:subClassOf cultivation:Yield ;
+                             rdfs:label "Greenhouse yield"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_cover
+cultivation:Greenhouse_cover rdf:type owl:Class ;
+                             rdfs:label "Greenhouse cover"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_cultivation_system
+cultivation:Greenhouse_cultivation_system rdf:type owl:Class ;
+                                          rdfs:subClassOf cultivation:Cultivation_system ;
+                                          rdfs:label "Greenhouse cultivation system"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_glass
+cultivation:Greenhouse_glass rdf:type owl:Class ;
+                             rdfs:subClassOf cultivation:Greenhouse_cover ;
+                             rdfs:label "Greenhouse glass"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_plastic
+cultivation:Greenhouse_plastic rdf:type owl:Class ;
+                               rdfs:subClassOf cultivation:Greenhouse_cover ;
+                               rdfs:label "Greenhouse plastic"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Grid_Electricity
+cultivation:Grid_Electricity rdf:type owl:Class ;
+                             rdfs:subClassOf cultivation:Electricity_Source ;
+                             rdfs:label "Grid electricity"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Heat_Pump_Heat
+cultivation:Heat_Pump_Heat rdf:type owl:Class ;
+                           rdfs:subClassOf cultivation:Heat_Source ;
+                           rdfs:label "Heat pump heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Heat_Source
+cultivation:Heat_Source rdf:type owl:Class ;
+                        rdfs:label "Heat source"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Industry_Heat
+cultivation:Industry_Heat rdf:type owl:Class ;
+                          rdfs:subClassOf cultivation:Heat_Source ;
+                          rdfs:label "Industry heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Lime_Fertiliser
+cultivation:Lime_Fertiliser rdf:type owl:Class ;
+                            rdfs:subClassOf cultivation:Fertiliser ;
+                            rdfs:label "Lime fertiliser"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#N2O_Cultivation
+cultivation:N2O_Cultivation rdf:type owl:Class ;
+                            rdfs:label "N2O cultivation"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Natural_gas_Boiler_Heat
+cultivation:Natural_gas_Boiler_Heat rdf:type owl:Class ;
+                                    rdfs:subClassOf cultivation:Boiler_Heat ;
+                                    rdfs:label "Natural gas boiler heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Natural_gas_CHP_Electricity
+cultivation:Natural_gas_CHP_Electricity rdf:type owl:Class ;
+                                        rdfs:subClassOf cultivation:CHP_Electricity ;
+                                        rdfs:label "Natural gas CHP electricity"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Natural_gas_CHP_Heat
+cultivation:Natural_gas_CHP_Heat rdf:type owl:Class ;
+                                 rdfs:subClassOf cultivation:CHP_Heat ;
+                                 rdfs:label "Natural gas CHP heat"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Nitrogen_Fertiliser
+cultivation:Nitrogen_Fertiliser rdf:type owl:Class ;
+                                rdfs:subClassOf cultivation:Fertiliser ;
+                                rdfs:label "Nitrogen fertiliser"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Open_field_Yield
+cultivation:Open_field_Yield rdf:type owl:Class ;
+                             rdfs:subClassOf cultivation:Yield ;
+                             rdfs:label "Open field yield"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Open_field_cultivation_system
+cultivation:Open_field_cultivation_system rdf:type owl:Class ;
+                                          rdfs:subClassOf cultivation:Cultivation_system ;
+                                          rdfs:label "Open field cultivation system"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Other_Input_CO2
+cultivation:Other_Input_CO2 rdf:type owl:Class ;
+                            rdfs:comment "Other CO2 inputs specified in KG/M2" ;
+                            rdfs:label "Other input CO2"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Phosphorus_Fertiliser
+cultivation:Phosphorus_Fertiliser rdf:type owl:Class ;
+                                  rdfs:subClassOf cultivation:Fertiliser ;
+                                  rdfs:label "Phosphorus fertiliser"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Post_Harvest_Loss
+cultivation:Post_Harvest_Loss rdf:type owl:Class ;
+                              rdfs:label "Post harvest loss"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Potassium_Fertiliser
+cultivation:Potassium_Fertiliser rdf:type owl:Class ;
+                                 rdfs:subClassOf cultivation:Fertiliser ;
+                                 rdfs:label "Potassium fertiliser"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Production_System
+cultivation:Production_System rdf:type owl:Class ;
+                              rdfs:label "Production system"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Purified_CO2_Enrichment
+cultivation:Purified_CO2_Enrichment rdf:type owl:Class ;
+                                    rdfs:subClassOf cultivation:CO2_Enrichment ;
+                                    rdfs:label "Purified CO2 enrichment"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Solar_Panel_Electricity
+cultivation:Solar_Panel_Electricity rdf:type owl:Class ;
+                                    rdfs:subClassOf cultivation:Electricity_Source ;
+                                    rdfs:label "Solar panel electricity"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Wind_mill_Electricity
+cultivation:Wind_mill_Electricity rdf:type owl:Class ;
+                                  rdfs:subClassOf cultivation:Electricity_Source ;
+                                  rdfs:label "Wind mill electricity"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Yield
+cultivation:Yield rdf:type owl:Class ;
+                  rdfs:label "Yield"@en .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#Point
+<http://www.w3.org/2003/01/geo/wgs84_pos#Point> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+                                                rdfs:comment """ 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  """ ,
+                                                             """A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  """ ;
+                                                rdfs:label "point" .
+
+
+###  http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdf:type owl:Class ;
+                                                       rdfs:comment """Anything with spatial extent, i.e. size, shape, or position.
+ e.g. people, places, bowling balls, as well as abstract areas like cubes.
+""" ;
+                                                       rdfs:label "SpatialThing" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Percentage
+om:Percentage rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/gramPerSquareMetre
+om:gramPerSquareMetre rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/kilogramPerHectare
+om:kilogramPerHectare rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/kilogramPerSquareMetre
+om:kilogramPerSquareMetre rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/kilowattHour
+om:kilowattHour rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/megajoule
+om:megajoule rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/megajoulePerSquareMetre
+om:megajoulePerSquareMetre rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/percent
+om:percent rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/squareMetrePerSquareMetre
+om:squareMetrePerSquareMetre rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/tonnePerHectare
+om:tonnePerHectare rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1
+cultivation:Greenhouse_system_Farm1 rdf:type owl:NamedIndividual ,
+                                             cultivation:Greenhouse_cultivation_system ;
+                                    cultivation:hasGreenhouseHeating "Yes" ;
+                                    rdfs:label "Greenhouse system Farm1" ;
+                                    <http://www.w3.org/2003/01/geo/wgs84_pos#location> cultivation:Greenhouse_system_Farm1_Location .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_Biowaste
+cultivation:Greenhouse_system_Farm1_Biowaste rdf:type owl:NamedIndividual ,
+                                                      om:Mass ,
+                                                      cultivation:Biowaste ;
+                                             om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                             om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#5KG_DM/M2> ;
+                                             cultivation:KgCo2EQperUnit 0.15 ;
+                                             rdfs:label "Greenhouse system Farm1 biowaste" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_CHPheat
+cultivation:Greenhouse_system_Farm1_CHPheat rdf:type owl:NamedIndividual ,
+                                                     om:Heat ,
+                                                     cultivation:CHP_Heat ;
+                                            om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                            om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1200MJ/M2> ;
+                                            cultivation:KgCo2EQperUnit 0.078 ;
+                                            rdfs:label "Greenhouse system farm1 CHPheat" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_CO2External
+cultivation:Greenhouse_system_Farm1_CO2External rdf:type owl:NamedIndividual ,
+                                                         om:Mass ,
+                                                         cultivation:External_CO2_Enrichment ;
+                                                om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0KG/M2> ;
+                                                cultivation:KgCo2EQperUnit 0.37 ;
+                                                rdfs:label "Greenhouse system farm1 CO2external" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_CO2Purified
+cultivation:Greenhouse_system_Farm1_CO2Purified rdf:type owl:NamedIndividual ,
+                                                         om:Mass ,
+                                                         cultivation:Purified_CO2_Enrichment ;
+                                                om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#20KG/M2> ;
+                                                cultivation:KgCo2EQperUnit 0.28 ;
+                                                rdfs:label "Greenhouse system farm1 CO2purified" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_GeoThermalHeat
+cultivation:Greenhouse_system_Farm1_GeoThermalHeat rdf:type owl:NamedIndividual ,
+                                                            om:Heat ,
+                                                            cultivation:Geothermal_Heat ;
+                                                   om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                   om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0MJ/M2> ;
+                                                   cultivation:KgCo2EQperUnit 0.017 ;
+                                                   rdfs:label "Greenhouse system farm1 geothermal heat" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_Glass
+cultivation:Greenhouse_system_Farm1_Glass rdf:type owl:NamedIndividual ,
+                                                   cultivation:Greenhouse_glass ;
+                                          om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                          om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1M2/M2> ;
+                                          cultivation:KgCo2EQperUnit 5 ;
+                                          rdfs:label "Greenhouse system Farm1 glass"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_GridElectricity
+cultivation:Greenhouse_system_Farm1_GridElectricity rdf:type owl:NamedIndividual ,
+                                                             om:ElectricCurrent ,
+                                                             cultivation:Grid_Electricity ;
+                                                    om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                    om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0KWH/M2> ;
+                                                    cultivation:KgCo2EQperUnit 0.635 ;
+                                                    rdfs:label "Greenhouse system farm1 grid electricity" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_Location
+cultivation:Greenhouse_system_Farm1_Location rdf:type owl:NamedIndividual ,
+                                                      <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+                                             rdfs:label "Greenhouse system farm1 location" ;
+                                             <http://www.w3.org/2003/01/geo/wgs84_pos#lat> 70.45 ;
+                                             <http://www.w3.org/2003/01/geo/wgs84_pos#long> -87.30 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_N2OCultivation
+cultivation:Greenhouse_system_Farm1_N2OCultivation rdf:type owl:NamedIndividual ,
+                                                            om:Mass ,
+                                                            cultivation:N2O_Cultivation ;
+                                                   om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                   om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0.00373KG/M2> ;
+                                                   cultivation:KgCo2EQperUnit 298 ;
+                                                   rdfs:label "Greenhouse system farm1 N2O cultivation" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_NitrogenFertiliserUse
+cultivation:Greenhouse_system_Farm1_NitrogenFertiliserUse rdf:type owl:NamedIndividual ,
+                                                                   om:Mass ,
+                                                                   cultivation:Nitrogen_Fertiliser ;
+                                                          om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                          om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0.2KG/M2> ;
+                                                          cultivation:KgCo2EQperUnit 4.5 ;
+                                                          rdfs:label "Greenhouse system farm1 nitrogen fertiliser" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_OtherInputs
+cultivation:Greenhouse_system_Farm1_OtherInputs rdf:type owl:NamedIndividual ,
+                                                         om:Mass ,
+                                                         cultivation:Other_Input_CO2 ;
+                                                om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#2KG/M2> ;
+                                                cultivation:KgCo2EQperUnit 1 ;
+                                                rdfs:label "Greenhouse system farm1 other input" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_PostHarvestLosses
+cultivation:Greenhouse_system_Farm1_PostHarvestLosses rdf:type owl:NamedIndividual ,
+                                                               om:Percentage ,
+                                                               cultivation:Post_Harvest_Loss ;
+                                                      om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                      om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#10PERCENT> ;
+                                                      rdfs:label "Greenhouse system farm1 post harvest loss" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1_Yield
+cultivation:Greenhouse_system_Farm1_Yield rdf:type owl:NamedIndividual ,
+                                                   om:Mass ,
+                                                   cultivation:Greenhouse_Yield ,
+                                                   cultivation:Yield ;
+                                          om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                          om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#100KG/M2> ;
+                                          rdfs:label "Greenhouse system farm1 yield" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm2
+cultivation:Greenhouse_system_Farm2 rdf:type owl:NamedIndividual ,
+                                             cultivation:Greenhouse_cultivation_system ;
+                                    rdfs:label "Greenhouse system farm2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm3
+cultivation:Greenhouse_system_Farm3 rdf:type owl:NamedIndividual ,
+                                             cultivation:Greenhouse_cultivation_system ;
+                                    rdfs:label "Greenhouse system farm3" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm1_CHPElectricity
+cultivation:Greenhouse_system_farm1_CHPElectricity rdf:type owl:NamedIndividual ,
+                                                            om:ElectricCurrent ,
+                                                            cultivation:CHP_Electricity ;
+                                                   om:hasPhenomenon cultivation:Greenhouse_system_Farm1 ;
+                                                   om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#100KWH/M2> ;
+                                                   cultivation:KgCo2EQperUnit 0.280 ;
+                                                   rdfs:label "Greenhouse system farm1 CHPelectricity" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_CHPelectricity
+cultivation:Greenhouse_system_farm2_CHPelectricity rdf:type owl:NamedIndividual ,
+                                                            om:ElectricCurrent ,
+                                                            cultivation:CHP_Electricity ;
+                                                   om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                                   om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#360MJ/M2> ;
+                                                   rdfs:label "Greenhouse system farm2 CHPelectricity" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_CHPheat
+cultivation:Greenhouse_system_farm2_CHPheat rdf:type owl:NamedIndividual ,
+                                                     om:Heat ,
+                                                     cultivation:CHP_Heat ;
+                                            om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                            om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1200MJ/M2> ;
+                                            rdfs:label "Greenhouse system farm2 CHPheat" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_CO2purifeid
+cultivation:Greenhouse_system_farm2_CO2purifeid rdf:type owl:NamedIndividual ,
+                                                         om:Mass ,
+                                                         cultivation:Purified_CO2_Enrichment ;
+                                                om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                                om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#200TONNE/HECTARE> ;
+                                                rdfs:label "Greenhouse system farm2 CO2purified" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_N2Ocultivation
+cultivation:Greenhouse_system_farm2_N2Ocultivation rdf:type owl:NamedIndividual ,
+                                                            om:Mass ,
+                                                            cultivation:N2O_Cultivation ;
+                                                   om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                                   om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#3.73GR/M2> ;
+                                                   rdfs:label "Greenhouse system farm2 N2Ocultivation" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_Nitrogen_fertiliser
+cultivation:Greenhouse_system_farm2_Nitrogen_fertiliser rdf:type owl:NamedIndividual ,
+                                                                 om:Mass ,
+                                                                 cultivation:Nitrogen_Fertiliser ;
+                                                        om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                                        om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#2000KG/HECTARE> ;
+                                                        rdfs:label "Greenhouse system farm2 nitrogen fertiliser" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_biowaste
+cultivation:Greenhouse_system_farm2_biowaste rdf:type owl:NamedIndividual ,
+                                                      om:Mass ,
+                                                      cultivation:Biowaste ;
+                                             om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                             om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#5000GRAM_DM/M2> ;
+                                             rdfs:label "Greenhouse system farm2 biowaste" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_glass
+cultivation:Greenhouse_system_farm2_glass rdf:type owl:NamedIndividual ,
+                                                   cultivation:Greenhouse_glass ;
+                                          om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                          om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1M2/M2> ;
+                                          rdfs:label "Greenhouse system farm2 glass" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_ohter_input
+cultivation:Greenhouse_system_farm2_ohter_input rdf:type owl:NamedIndividual ,
+                                                         om:Mass ,
+                                                         cultivation:Other_Input_CO2 ;
+                                                om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                                om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#2KG/M2> ;
+                                                rdfs:label "Greenhouse system farm2 other input" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_post_harvest_loss
+cultivation:Greenhouse_system_farm2_post_harvest_loss rdf:type owl:NamedIndividual ,
+                                                               om:Percentage ,
+                                                               cultivation:Post_Harvest_Loss ;
+                                                      om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                                      om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#10PERCENT> ;
+                                                      rdfs:label "Greenhouse system farm2 post harvest loss" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm2_yield
+cultivation:Greenhouse_system_farm2_yield rdf:type owl:NamedIndividual ,
+                                                   om:Mass ,
+                                                   cultivation:Yield ;
+                                          om:hasPhenomenon cultivation:Greenhouse_system_Farm2 ;
+                                          om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1000TON/HECTARE> ;
+                                          rdfs:label "Greenhouse system farm2 yield" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm3_CHPElectricity
+cultivation:Greenhouse_system_farm3_CHPElectricity rdf:type owl:NamedIndividual ,
+                                                            om:ElectricCurrent ,
+                                                            cultivation:CHP_Electricity ;
+                                                   om:hasPhenomenon cultivation:Greenhouse_system_Farm3 ;
+                                                   om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#100KWH/M2> .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_farm3_CHPheat
+cultivation:Greenhouse_system_farm3_CHPheat rdf:type owl:NamedIndividual ,
+                                                     om:Heat ,
+                                                     cultivation:CHP_Heat ;
+                                            om:hasPhenomenon cultivation:Greenhouse_system_Farm3 ;
+                                            om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#360MJ/M2> .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0.00373KG/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0.00373KG/M2> rdf:type owl:NamedIndividual ,
+                                                                                       om:Measure ;
+                                                                              om:hasUnit om:kilogramPerSquareMetre ;
+                                                                              cultivation:hasNumericalValue 0.00373 ;
+                                                                              rdfs:label "0.00373KG/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0.2KG/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0.2KG/M2> rdf:type owl:NamedIndividual ,
+                                                                                   om:Measure ;
+                                                                          om:hasUnit om:kilogramPerSquareMetre ;
+                                                                          cultivation:hasNumericalValue 0.2 ;
+                                                                          rdfs:label "0.2KG/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0KG/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0KG/M2> rdf:type owl:NamedIndividual ,
+                                                                                 om:Measure ;
+                                                                        om:hasUnit om:kilogramPerSquareMetre ;
+                                                                        cultivation:hasNumericalValue 0 ;
+                                                                        rdfs:label "0KG/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0KWH/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0KWH/M2> rdf:type owl:NamedIndividual ,
+                                                                                  om:Measure ;
+                                                                         om:hasUnit om:kilowattHour ;
+                                                                         cultivation:hasNumericalValue 0 ;
+                                                                         rdfs:label "0KWH/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0M2/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0M2/M2> rdf:type owl:NamedIndividual ,
+                                                                                 om:Measure ;
+                                                                        om:hasUnit om:squareMetrePerSquareMetre ;
+                                                                        cultivation:hasNumericalValue 0 ;
+                                                                        rdfs:label "0M2/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0MJ/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#0MJ/M2> rdf:type owl:NamedIndividual ,
+                                                                                 om:Measure ;
+                                                                        om:hasUnit om:megajoulePerSquareMetre ;
+                                                                        cultivation:hasNumericalValue 0 ;
+                                                                        rdfs:label "0MJ/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#10PERCENT
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#10PERCENT> rdf:type owl:NamedIndividual ,
+                                                                                    om:Measure ;
+                                                                           om:hasUnit om:percent ;
+                                                                           cultivation:hasNumericalValue 10 ;
+                                                                           rdfs:label "10PERCENT" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1000TON/HECTARE
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1000TON/HECTARE> rdf:type owl:NamedIndividual ,
+                                                                                          om:Measure ;
+                                                                                 om:hasUnit om:tonnePerHectare ;
+                                                                                 cultivation:hasNumericalValue 1000 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#100KG/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#100KG/M2> rdf:type owl:NamedIndividual ,
+                                                                                   om:Measure ;
+                                                                          om:hasUnit om:kilogramPerSquareMetre ;
+                                                                          cultivation:hasNumericalValue 100 ;
+                                                                          rdfs:label "100KG/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#100KWH/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#100KWH/M2> rdf:type owl:NamedIndividual ,
+                                                                                    om:Measure ;
+                                                                           om:hasUnit om:kilowattHour ;
+                                                                           cultivation:hasNumericalValue 100 ;
+                                                                           rdfs:label "100KWH/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1200MJ/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1200MJ/M2> rdf:type owl:NamedIndividual ,
+                                                                                    om:Measure ;
+                                                                           om:hasUnit om:megajoulePerSquareMetre ;
+                                                                           cultivation:hasNumericalValue 1200 ;
+                                                                           rdfs:label "1200MJ/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1M2/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#1M2/M2> rdf:type owl:NamedIndividual ,
+                                                                                 om:Measure ;
+                                                                        om:hasUnit om:squareMetrePerSquareMetre ;
+                                                                        cultivation:hasNumericalValue 1 ;
+                                                                        rdfs:label "1M2/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#2000KG/HECTARE
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#2000KG/HECTARE> rdf:type owl:NamedIndividual ,
+                                                                                         om:Measure ;
+                                                                                om:hasUnit om:kilogramPerHectare ;
+                                                                                cultivation:hasNumericalValue 2000 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#200TONNE/HECTARE
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#200TONNE/HECTARE> rdf:type owl:NamedIndividual ,
+                                                                                           om:Measure ;
+                                                                                  om:hasUnit om:tonnePerHectare ;
+                                                                                  cultivation:hasNumericalValue 200 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#20KG/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#20KG/M2> rdf:type owl:NamedIndividual ,
+                                                                                  om:Measure ;
+                                                                         om:hasUnit om:kilogramPerSquareMetre ;
+                                                                         cultivation:hasNumericalValue 20 ;
+                                                                         rdfs:label "20KG/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#2KG/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#2KG/M2> rdf:type owl:NamedIndividual ,
+                                                                                 om:Measure ;
+                                                                        om:hasUnit om:kilogramPerSquareMetre ;
+                                                                        cultivation:hasNumericalValue 2 ;
+                                                                        rdfs:label "2KG/M2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#3.73GR/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#3.73GR/M2> rdf:type owl:NamedIndividual ,
+                                                                                    om:Measure ;
+                                                                           om:hasUnit om:gramPerSquareMetre ;
+                                                                           cultivation:hasNumericalValue 3.730 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#360MJ/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#360MJ/M2> rdf:type owl:NamedIndividual ,
+                                                                                   om:Measure ;
+                                                                          om:hasUnit om:megajoule ;
+                                                                          cultivation:hasNumericalValue 360 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#5000GRAM_DM/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#5000GRAM_DM/M2> rdf:type owl:NamedIndividual ,
+                                                                                         om:Measure ;
+                                                                                om:hasUnit om:gramPerSquareMetre ;
+                                                                                cultivation:hasNumericalValue 5000 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#5KG_DM/M2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#5KG_DM/M2> rdf:type owl:NamedIndividual ,
+                                                                                    om:Measure ;
+                                                                           om:hasUnit om:kilogramPerSquareMetre ;
+                                                                           cultivation:hasNumericalValue 5 ;
+                                                                           rdfs:comment "5 Kilogram Dry Matter per sqaure metre." ;
+                                                                           rdfs:label "5KG_DM/M2" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#> <http://purl.org/dc/elements/1.1/date> "$Date: 2009/04/20 15:00:30 $" ;
+                                           rdfs:label "geo" ;
+                                           <http://purl.org/dc/elements/1.1/description> """A vocabulary for representing latitude, longitude and 
+ altitude information in the WGS84 geodetic reference datum. 
+ Version $Id: wgs84_pos.rdf,v 1.22 2009/04/20 15:00:30 timbl Exp $. See http://www.w3.org/2003/01/geo/ for more details.""" ;
+                                           rdfs:comment """
+Recent changes to this namespace:
+$Log: wgs84_pos.rdf,v $
+Revision 1.22  2009/04/20 15:00:30  timbl
+Remove the time bits which have been deal with elsewhere eg in iCal.
+
+Revision 1.21  2009/04/20 12:52:47  timbl
+try again
+
+Revision 1.20  2009/04/20 12:42:11  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.19  2009/04/20 12:36:31  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.18  2006/02/01 22:01:04  danbri
+Clarified that lat and long are decimal degrees, and that alt is decimal metres about local reference ellipsoid
+
+Revision 1.17  2004/02/06 17:38:12  danbri
+Fixed a bad commit screwup
+
+Revision 1.15  2003/04/19 11:24:08  danbri
+Fixed the typo even more.
+
+Revision 1.14  2003/04/19 11:16:56  danbri
+fixed a typo
+
+Revision 1.13  2003/02/19 22:27:27  connolly
+relaxed domain constraints on lat/long/alt from Point to SpatialThing
+
+Revision 1.12  2003/01/12 01:41:41  danbri
+Trying local copy of XSLT doc.
+
+Revision 1.11  2003/01/12 01:20:18  danbri
+added a link to morten's xslt rdfs viewer.
+
+Revision 1.10  2003/01/11 18:56:49  danbri
+Removed datatype range from lat and long properties, since they would
+have required each occurance of the property to mention the datatype.
+
+Revision 1.9  2003/01/11 11:41:31  danbri
+Another typo; repaired rdfs:Property to rdf:Property x4
+
+Revision 1.8  2003/01/11 11:05:02  danbri
+Added an rdfs:range for each lat/long/alt property,
+http://www.w3.org/2001/XMLSchema#float
+
+Revision 1.7  2003/01/10 20:25:16  danbri
+Longer rdfs:comment for Point, trying to be Earth-centric and neutral about
+coordinate system(s) at the same time. Feedback welcomed.
+
+Revision 1.6  2003/01/10 20:18:30  danbri
+Added CVS log comments into the RDF/XML as an rdfs:comment property of the
+vocabulary. Note that this is not common practice (but seems both harmless
+and potentially useful).
+
+
+revision 1.5
+date: 2003/01/10 20:14:31;  author: danbri;  state: Exp;  lines: +16 -5
+Updated schema:
+Added a dc:date, added url for more info. Changed the rdfs:label of the
+namespace from gp to geo. Added a class Point, set as the rdfs:domain of
+each property. Added XML comment on the lat_long property suggesting that
+we might not need it (based on #rdfig commentary from implementors).
+
+revision 1.4
+date: 2003/01/10 20:01:07;  author: danbri;  state: Exp;  lines: +6 -5
+Fixed typo; several rdfs:about attributes are now rdf:about. Thanks to MortenF in
+#rdfig for catching this error.
+
+revision 1.3
+date: 2003/01/10 11:59:03;  author: danbri;  state: Exp;  lines: +4 -3
+fixed buglet in vocab, added more wgs links
+
+revision 1.2
+date: 2003/01/10 11:01:11;  author: danbri;  state: Exp;  lines: +4 -4
+Removed alt from the as-a-flat-string property, and switched from
+space separated to comma separated.
+
+revision 1.1
+date: 2003/01/10 10:53:23;  author: danbri;  state: Exp;
+basic geo vocab
+
+""" ;
+                                           <http://purl.org/dc/elements/1.1/title> "WGS84 Geo Positioning: an RDF vocabulary" .
+
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat_long> rdfs:comment "A comma-separated representation of a latitude, longitude coordinate." ;
+                                                   rdfs:label "lat/long" .
+
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#location> rdfs:label "location" ;
+                                                   rdfs:comment """The relation between something and the point, 
+ or other geometrical thing in space, where it is.  For example, the realtionship between
+ a radio tower and a Point with a given lat and long.
+ Or a relationship between a park and its outline as a closed arc of points, or a road and
+ its location as a arc (a sequence of points).
+ Clearly in practice there will be limit to the accuracy of any such statement, but one would expect
+ an accuracy appropriate for the size of the object and uses such as mapping .
+ """ .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

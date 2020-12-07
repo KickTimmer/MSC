@@ -1,0 +1,262 @@
+@prefix : <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix packaging: <http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#> .
+@base <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging> .
+
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#KgCo2perUnit
+:KgCo2perUnit rdf:type owl:AnnotationProperty ;
+              rdfs:comment "" ;
+              rdfs:label "kgco2perunit" ;
+              rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasPhenomenon
+om:hasPhenomenon rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit
+om:hasUnit rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasValue
+om:hasValue rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#hasNumericalValue
+packaging:hasNumericalValue rdf:type owl:DatatypeProperty ;
+                            rdfs:range xsd:decimal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/ElectricCurrent
+om:ElectricCurrent rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Energy
+om:Energy rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Mass
+om:Mass rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Measure
+om:Measure rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Cooling_Energy
+:Cooling_Energy rdf:type owl:Class ;
+                rdfs:label "Cooling Energy"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Board_box
+packaging:Board_box rdf:type owl:Class ;
+                    rdfs:subClassOf packaging:package_material ;
+                    rdfs:label "Board box"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Packaging
+packaging:Packaging rdf:type owl:Class ;
+                    rdfs:label "Packaging"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Pallet
+packaging:Pallet rdf:type owl:Class ;
+                 rdfs:label "Pallet"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Polyethylene
+packaging:Polyethylene rdf:type owl:Class ;
+                       rdfs:subClassOf packaging:package_material ;
+                       rdfs:label "Polyethylene"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#package_material
+packaging:package_material rdf:type owl:Class ;
+                           rdfs:label "Package Material"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/gramPerKilogram
+om:gramPerKilogram rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/kilogramPerKilogram
+om:kilogramPerKilogram rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/kilowattHour
+om:kilowattHour rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/one
+om:one rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/wattHour
+om:wattHour rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_1_pallet_use
+:Belichte_Nederlandse_Komkommer_1_pallet_use rdf:type owl:NamedIndividual ,
+                                                      packaging:Pallet ;
+                                             om:hasPhenomenon packaging:Belichte_Nederlandse_Komkommer_1_Packaging ;
+                                             om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.0001pallet/KG> ;
+                                             :KgCo2perUnit 2.26 ;
+                                             rdfs:label "Belichte Nederlandse Komkommer 1 pallet use" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_boardbox
+:Belichte_Nederlandse_Komkommer_2_boardbox rdf:type owl:NamedIndividual ,
+                                                    om:Mass ,
+                                                    packaging:Board_box ;
+                                           om:hasPhenomenon :Belichte_Nederlandse_Komkommer_2_packaging ;
+                                           om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.055KG/KG> ;
+                                           rdfs:label "Belichte Nederlandse Komkommer 2 boardbox" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_cooling_energy
+:Belichte_Nederlandse_Komkommer_2_cooling_energy rdf:type owl:NamedIndividual ,
+                                                          om:Energy ,
+                                                          :Cooling_Energy ;
+                                                 om:hasPhenomenon :Belichte_Nederlandse_Komkommer_2_packaging ;
+                                                 om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.05KWH> ;
+                                                 rdfs:label "Belichte Nederlandse Komkommer 2 cooling energy" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_packaging
+:Belichte_Nederlandse_Komkommer_2_packaging rdf:type owl:NamedIndividual ,
+                                                     packaging:Packaging ;
+                                            rdfs:label "Belichte Nederlandse Komkommer 2 packaging" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_pallet_use
+:Belichte_Nederlandse_Komkommer_2_pallet_use rdf:type owl:NamedIndividual ,
+                                                      packaging:Pallet ;
+                                             om:hasPhenomenon :Belichte_Nederlandse_Komkommer_2_packaging ;
+                                             om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.0001pallet/KG> ;
+                                             rdfs:label "Belichte Nederlandse Komkommer 2 pallet use" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_polyethylene
+:Belichte_Nederlandse_Komkommer_2_polyethylene rdf:type owl:NamedIndividual ,
+                                                        om:Mass ,
+                                                        packaging:Polyethylene ;
+                                               om:hasPhenomenon :Belichte_Nederlandse_Komkommer_2_packaging ;
+                                               om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#12G/KG> ;
+                                               rdfs:label "Belichte Nederlandse Komkommer 2 polyethylene" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.0001pallet/KG
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.0001pallet/KG> rdf:type owl:NamedIndividual ,
+                                                                                        om:Measure ;
+                                                                               om:hasUnit om:one ;
+                                                                               packaging:hasNumericalValue 0.0001 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.012KG/KG
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.012KG/KG> rdf:type owl:NamedIndividual ,
+                                                                                   om:Measure ;
+                                                                          om:hasUnit om:kilogramPerKilogram ;
+                                                                          packaging:hasNumericalValue 0.012 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.05KWH
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.05KWH> rdf:type owl:NamedIndividual ,
+                                                                                om:Measure ;
+                                                                       om:hasUnit om:kilowattHour ;
+                                                                       packaging:hasNumericalValue 0.05 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.055KG/KG
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.055KG/KG> rdf:type owl:NamedIndividual ,
+                                                                                   om:Measure ;
+                                                                          om:hasUnit om:kilogramPerKilogram ;
+                                                                          packaging:hasNumericalValue 0.055 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#12G/KG
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#12G/KG> rdf:type owl:NamedIndividual ,
+                                                                               om:Measure ;
+                                                                      om:hasUnit om:gramPerKilogram ;
+                                                                      packaging:hasNumericalValue 12 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#50Wh
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#50Wh> rdf:type owl:NamedIndividual ,
+                                                                             om:Measure ;
+                                                                    om:hasUnit om:wattHour ;
+                                                                    packaging:hasNumericalValue 50 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#55G/KG
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#55G/KG> rdf:type owl:NamedIndividual ,
+                                                                               om:Measure ;
+                                                                      om:hasUnit om:gramPerKilogram ;
+                                                                      packaging:hasNumericalValue 55 .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Belichte_Nederlandse_Komkommer_1_CoolingEnergy
+packaging:Belichte_Nederlandse_Komkommer_1_CoolingEnergy rdf:type owl:NamedIndividual ,
+                                                                  om:ElectricCurrent ,
+                                                                  :Cooling_Energy ;
+                                                         om:hasPhenomenon packaging:Belichte_Nederlandse_Komkommer_1_Packaging ;
+                                                         om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#50Wh> ;
+                                                         :KgCo2perUnit 0.00052 ;
+                                                         rdfs:label "Belichte Nederlandse Komkommer 1 cooling energy" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Belichte_Nederlandse_Komkommer_1_Packaging
+packaging:Belichte_Nederlandse_Komkommer_1_Packaging rdf:type owl:NamedIndividual ,
+                                                              packaging:Packaging ;
+                                                     rdfs:label "Belichte Nederlandse Komkommer 1 packaging" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Belichte_Nederlandse_Komkommer_1_Polyethyline
+packaging:Belichte_Nederlandse_Komkommer_1_Polyethyline rdf:type owl:NamedIndividual ,
+                                                                 om:Mass ,
+                                                                 packaging:Polyethylene ;
+                                                        om:hasPhenomenon packaging:Belichte_Nederlandse_Komkommer_1_Packaging ;
+                                                        om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#0.012KG/KG> ;
+                                                        :KgCo2perUnit 0.004 ;
+                                                        rdfs:comment "Packeging Polyethylene" ;
+                                                        rdfs:label "Belichte Nederlandse Komkommer 1 polyethylene" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Belichte_Nederlandse_Komkommer_1_boardbox
+packaging:Belichte_Nederlandse_Komkommer_1_boardbox rdf:type owl:NamedIndividual ,
+                                                             om:Mass ,
+                                                             packaging:Board_box ;
+                                                    om:hasPhenomenon packaging:Belichte_Nederlandse_Komkommer_1_Packaging ;
+                                                    om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#55G/KG> ;
+                                                    :KgCo2perUnit 0.0008 ;
+                                                    rdfs:comment "Packeging BoardBox" ;
+                                                    rdfs:label "Belichte Nederlandse Komkommer 1 boardbox" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

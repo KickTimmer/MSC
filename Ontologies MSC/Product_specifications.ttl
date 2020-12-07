@@ -1,0 +1,333 @@
+@prefix : <http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix product: <http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#> .
+@base <http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications> .
+
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications> rdf:type owl:Ontology ;
+                                                                             rdfs:comment "Product specifications" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasPhenomenon
+om:hasPhenomenon rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit
+om:hasUnit rdf:type owl:ObjectProperty .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/hasValue
+om:hasValue rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Country_of_Origin
+product:Country_of_Origin rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#has_Ingredient
+product:has_Ingredient rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#has_Packaging
+product:has_Packaging rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#has_Production_System
+product:has_Production_System rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#has_Transportation
+product:has_Transportation rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#hasNumericalValue
+product:hasNumericalValue rdf:type owl:DatatypeProperty ;
+                          rdfs:range xsd:decimal .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#has_GLN
+product:has_GLN rdf:type owl:DatatypeProperty ;
+                rdfs:domain product:Food_Product ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#has_GTIN
+product:has_GTIN rdf:type owl:DatatypeProperty ;
+                 rdfs:domain product:Food_Product ;
+                 rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Mass
+om:Mass rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Measure
+om:Measure rdf:type owl:Class .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/Volume
+om:Volume rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Belichte_Nederlanse_Komkommer
+product:Belichte_Nederlanse_Komkommer rdf:type owl:Class ;
+                                      rdfs:subClassOf product:Cumcumber ;
+                                      rdfs:label "Belichte Nederlandse Komkommer"@nl .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Cumcumber
+product:Cumcumber rdf:type owl:Class ;
+                  rdfs:subClassOf product:Vegetable ;
+                  rdfs:label "Cumcumber"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Food_Product
+product:Food_Product rdf:type owl:Class ;
+                     rdfs:comment "A food Product." ;
+                     rdfs:label "Food Product"@en ,
+                                "Voedsel Product"@nl .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Klassiek_Nederladse_Tomatensoep
+product:Klassiek_Nederladse_Tomatensoep rdf:type owl:Class ;
+                                        rdfs:subClassOf product:Tomato_Soup ;
+                                        rdfs:label "Classic Dutch Tomatosoup"@en ,
+                                                   "Klassiek Nederlandse Tomatensoep"@nl .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Klassiek_Nederlandse_Tomaat
+product:Klassiek_Nederlandse_Tomaat rdf:type owl:Class ;
+                                    rdfs:subClassOf product:Tomato ;
+                                    rdfs:label "Klassiek Nederlandse Tomaat"@nl .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Onbelichte_Nederlandse_Komkommer
+product:Onbelichte_Nederlandse_Komkommer rdf:type owl:Class ;
+                                         rdfs:subClassOf product:Cumcumber ;
+                                         rdfs:label "Onbelichte Nederlandse Komkommer"@nl .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Soup
+product:Soup rdf:type owl:Class ;
+             rdfs:subClassOf product:Food_Product ;
+             rdfs:label "Soup"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Spaanse_Komkommer
+product:Spaanse_Komkommer rdf:type owl:Class ;
+                          rdfs:subClassOf product:Cumcumber ;
+                          rdfs:label "Spaanse Komkommer"@nl .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Tomato
+product:Tomato rdf:type owl:Class ;
+               rdfs:subClassOf product:Vegetable ;
+               rdfs:label "Tomato"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Tomato_Soup
+product:Tomato_Soup rdf:type owl:Class ;
+                    rdfs:subClassOf product:Soup ;
+                    rdfs:label "Tomato Soup"@en .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Vegetable
+product:Vegetable rdf:type owl:Class ;
+                  rdfs:subClassOf product:Food_Product ;
+                  rdfs:label "Vegetable"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/gram
+om:gram rdf:type owl:NamedIndividual .
+
+
+###  http://www.ontology-of-units-of-measure.org/resource/om-2/litre
+om:litre rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm2
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm2> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Belichte_Nederlandse_Komkommer_1
+product:Belichte_Nederlandse_Komkommer_1 rdf:type owl:NamedIndividual ,
+                                                  product:Belichte_Nederlanse_Komkommer ;
+                                         product:Country_of_Origin <http://www4.wiwiss.fu-berlin.de/eurostat/resource/countries/Nederland> ;
+                                         product:has_Ingredient product:Belichte_Nederlandse_Komkommer_1 ;
+                                         product:has_Packaging <http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Belichte_Nederlandse_Komkommer_1_Packaging> ;
+                                         product:has_Production_System <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm1> ;
+                                         product:has_Transportation <http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transportation_1> ;
+                                         product:has_GLN 123456789 ;
+                                         product:has_GTIN 887766554433 ;
+                                         rdfs:label "Belichte Nederlandse Komkommer 1" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Belichte_Nederlandse_Komkommer_1_mass
+product:Belichte_Nederlandse_Komkommer_1_mass rdf:type owl:NamedIndividual ,
+                                                       om:Mass ;
+                                              om:hasPhenomenon product:Belichte_Nederlandse_Komkommer_1 ;
+                                              om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#250gram> ;
+                                              rdfs:label "Belichte Nederlandse Komkommer 1 mass" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Belichte_Nederlandse_Komkommer_2
+product:Belichte_Nederlandse_Komkommer_2 rdf:type owl:NamedIndividual ,
+                                                  product:Belichte_Nederlanse_Komkommer ;
+                                         product:Country_of_Origin <http://www4.wiwiss.fu-berlin.de/eurostat/resource/countries/Nederland> ;
+                                         product:has_Ingredient product:Belichte_Nederlandse_Komkommer_2 ;
+                                         product:has_Packaging <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_packaging> ;
+                                         product:has_Production_System <http://www.semanticweb.org/kick_/ontologies/2020/4/Cultivation#Greenhouse_system_Farm2> ;
+                                         product:has_Transportation <http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transporation_2> ;
+                                         product:has_GLN 12312312 ;
+                                         product:has_GTIN 234323278787 ;
+                                         rdfs:label "Belichte Nederlandse Komkommer 2" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Belichte_Nederlandse_Komkommer_3
+product:Belichte_Nederlandse_Komkommer_3 rdf:type owl:NamedIndividual ,
+                                                  product:Belichte_Nederlanse_Komkommer ;
+                                         product:has_Packaging <http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_packaging> ;
+                                         product:has_Transportation <http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transportation_3> ;
+                                         product:has_GLN 11223344 ;
+                                         rdfs:label "Belichte Nederlandse Komkommer 3" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Klassiek_Nederlandse_Tomaat_1
+product:Klassiek_Nederlandse_Tomaat_1 rdf:type owl:NamedIndividual ,
+                                               product:Klassiek_Nederlandse_Tomaat ;
+                                      product:has_Ingredient product:Klassiek_Nederlandse_Tomaat_1 ;
+                                      rdfs:label "Klassiek Nederlandse Tomaat 1" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Klassiek_Nederlandse_Tomaat_1_mass
+product:Klassiek_Nederlandse_Tomaat_1_mass rdf:type owl:NamedIndividual ,
+                                                    om:Mass ;
+                                           om:hasPhenomenon product:Klassiek_Nederlandse_Tomaat_1 ;
+                                           om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#150gram> ;
+                                           rdfs:label "Klassiek Nederlandse Tomaat 1 mass" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Klassiek_Nederlandse_Tomatensoep_1
+product:Klassiek_Nederlandse_Tomatensoep_1 rdf:type owl:NamedIndividual ,
+                                                    product:Klassiek_Nederladse_Tomatensoep ;
+                                           product:has_Ingredient product:Klassiek_Nederlandse_Tomaat_1 ;
+                                           rdfs:label "Klassiek Nederlandse Tomatensoep 1" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Klassiek_Nederlandse_Tomatensoep_1_volume
+product:Klassiek_Nederlandse_Tomatensoep_1_volume rdf:type owl:NamedIndividual ,
+                                                           om:Volume ;
+                                                  om:hasPhenomenon product:Klassiek_Nederlandse_Tomatensoep_1 ;
+                                                  om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#1liter> ;
+                                                  rdfs:label "Klassiek Nederlandse Tomatensoep 1 volume" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Onbelichte_Nederlandse_Komkommer_1
+product:Onbelichte_Nederlandse_Komkommer_1 rdf:type owl:NamedIndividual ,
+                                                    product:Onbelichte_Nederlandse_Komkommer ;
+                                           product:has_Ingredient product:Onbelichte_Nederlandse_Komkommer_1 ;
+                                           rdfs:label "Onbelichte Nederlandse Komkommer 1" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Onbelichte_Nederlandse_Komkommer_1_mass
+product:Onbelichte_Nederlandse_Komkommer_1_mass rdf:type owl:NamedIndividual ,
+                                                         om:Mass ;
+                                                om:hasPhenomenon product:Onbelichte_Nederlandse_Komkommer_1 ;
+                                                om:hasValue <http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#300gram> ;
+                                                rdfs:label "Onbelichte Nederlandse Komkommer 1 mass" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#Spaanse_Komkommer_1
+product:Spaanse_Komkommer_1 rdf:type owl:NamedIndividual ,
+                                     product:Spaanse_Komkommer ;
+                            rdfs:label "Spaanse Komkommer 1" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#1liter
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#1liter> rdf:type owl:NamedIndividual ,
+                                                                                            om:Measure ;
+                                                                                   om:hasUnit om:litre ;
+                                                                                   product:hasNumericalValue 1 ;
+                                                                                   rdfs:label "1liter" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#150gram
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#150gram> rdf:type owl:NamedIndividual ,
+                                                                                             om:Measure ;
+                                                                                    om:hasUnit om:gram ;
+                                                                                    product:hasNumericalValue 150 ;
+                                                                                    rdfs:label "150gram" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#250gram
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#250gram> rdf:type owl:NamedIndividual ,
+                                                                                             om:Measure ;
+                                                                                    om:hasUnit om:gram ;
+                                                                                    product:hasNumericalValue 250 ;
+                                                                                    rdfs:label "250gram" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#300gram
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#300gram> rdf:type owl:NamedIndividual ,
+                                                                                             om:Measure ;
+                                                                                    om:hasUnit om:gram ;
+                                                                                    product:hasNumericalValue 300 ;
+                                                                                    rdfs:label "300gram" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#350gram
+<http://www.semanticweb.org/kick_/ontologies/2020/4/Product_specifications#350gram> rdf:type owl:NamedIndividual ,
+                                                                                             om:Measure ;
+                                                                                    om:hasUnit om:gram ;
+                                                                                    product:hasNumericalValue 350 ;
+                                                                                    rdfs:label "350gram" .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_packaging
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packaging#Belichte_Nederlandse_Komkommer_2_packaging> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Belichte_Nederlandse_Komkommer_1_Packaging
+<http://www.semanticweb.org/kick_/ontologies/2020/4/packeging#Belichte_Nederlandse_Komkommer_1_Packaging> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transporation_2
+<http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transporation_2> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transportation_1
+<http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transportation_1> rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transportation_3
+<http://www.semanticweb.org/kick_/ontologies/2020/5/Transport#Transportation_3> rdf:type owl:NamedIndividual .
+
+
+###  http://www4.wiwiss.fu-berlin.de/eurostat/resource/countries/Nederland
+<http://www4.wiwiss.fu-berlin.de/eurostat/resource/countries/Nederland> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
